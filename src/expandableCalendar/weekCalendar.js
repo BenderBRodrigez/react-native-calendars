@@ -29,7 +29,7 @@ class WeekCalendar extends Component {
     /** whether to have shadow/elevation for the calendar */
     allowShadow: PropTypes.bool,
     /** whether to hide the names of the week days */
-    hideDayNames: PropTypes.bool
+    hideDayNames: PropTypes.bool,
     /** Callback for week change event */
     onWeekChange: PropTypes.func,
   };
