@@ -30,6 +30,8 @@ class WeekCalendar extends Component {
     allowShadow: PropTypes.bool,
     /** whether to hide the names of the week days */
     hideDayNames: PropTypes.bool
+    /** Callback for week change event */
+    onWeekChange: PropTypes.func,
   };
 
   static defaultProps = {
@@ -221,7 +223,7 @@ class WeekCalendar extends Component {
           initialScrollIndex={NUMBER_OF_PAGES}
           getItemLayout={this.getItemLayout}
           onScroll={this.onScroll}
-          onMomentumScrollEnd={this.onMomentumScrollEnd}
+          onMomentumScrollEnd={this.props.onWeekChange? this.props.onWeekChange : this.onMomentumScrollEnd}
         />
       </View>
     );
