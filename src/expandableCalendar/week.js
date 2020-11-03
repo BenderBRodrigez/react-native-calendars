@@ -51,8 +51,8 @@ class Week extends Component {
       }
 
       newDate = current;
-      index = dayOfTheWeek - 1;
-      while (index < 14) {
+      index = dayOfTheWeek + 1;
+      while (index < 7) {
         newDate = parseDate(newDate).addDays(1);
         daysArray.push(newDate);
         index += 1;
@@ -157,13 +157,10 @@ class Week extends Component {
     // if (this.props.showWeekNumbers) {
     //   week.unshift(this.renderWeekNumber(item[item.length - 1].getWeek()));
     // }
-    const firstWeek = week.slice(0,7)
-    const secondWeek = week.slice(7,14)
 
     return (
       <View style={this.style.container}>
-        <View style={[this.style.week, this.props.style]}>{firstWeek}</View>
-        <View style={[this.style.week, this.props.style]}>{secondWeek}</View>
+        <View style={[this.style.week, this.props.style]}>{week}</View>
       </View>
     );
   }
